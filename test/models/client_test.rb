@@ -28,6 +28,13 @@ class ClientTest < ActiveSupport::TestCase
     assert(client.errors.messages == { email: ['is invalid'] })
   end
 
+  test 'shouldn`t be created with duplicated email entry' do
+    name = Faker::Artist.name
+    client = Client.new(name: name, email: 'sr.alan.bispo@gmail.com')
+    assert_not(client.save)
+    assert(client.errors.messages == { email: ['has already been taken'] })
+  end
+
   test 'should be updated' do
     client = Client.first
     assert(client.update(name: 'Josué da Silva'))
@@ -51,6 +58,6 @@ class ClientTest < ActiveSupport::TestCase
 
   test 'should be destroyed' do
     client = Client.first
-    client.destroy
+    assert(client.destroy)
   end
 end
