@@ -12,7 +12,7 @@ test:
   <<: *default
   database: client_enrollment_test
   username: postgres
-  password: postgres
+  password:
 production:
   <<: *default
   database: client_enrollment_production
