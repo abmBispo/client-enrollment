@@ -18,7 +18,7 @@ gem 'active_model_serializers', '~> 0.10.2'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated paginator for Rails 3+
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', '~> 1.2.1'
 # Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
 gem 'faker', '~> 1.6', '>= 1.6.3'
 # gem 'coveralls', '~> 0.8.23'
