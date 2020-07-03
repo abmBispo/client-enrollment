@@ -21,6 +21,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'kaminari', '~> 0.17.0'
 # Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
 gem 'faker', '~> 1.6', '>= 1.6.3'
+# gem 'coveralls', '~> 0.8.23'
+gem 'coveralls', require: false, group: :test
 # Code coverage for Ruby 1.9+ with a powerful configuration library and automatic merging of coverage across test suites.
 gem 'simplecov', require: false, group: :test
 
