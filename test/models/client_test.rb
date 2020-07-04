@@ -10,6 +10,15 @@ class ClientTest < ActiveSupport::TestCase
     assert(client.email == email)
   end
 
+  test 'should be created with valid enrollments_ids' do
+    name = Faker::Artist.name
+    email = Faker::Internet.email
+    client = Client.new(name: name, email: email, enrollment_ids: [enrollments(:one).id])
+    assert(client.save)
+    assert(client.name == name)
+    assert(client.email == email)
+  end
+
   test 'shouldn`t be created without required fields' do
     name = Faker::Artist.name
     email = Faker::Internet.email

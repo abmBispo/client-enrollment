@@ -30,12 +30,14 @@ pt-BR:
         tag:
           attributes:
             name:
-              blank: Nome não pode estar em branco.          
+              blank: Nome não pode estar em branco.
         client:
           attributes:
+            enrollment_ids:
+              invalid: "Não é possível cadastrar cliente com ID de formulario invalido. ID(s) invalido(s): %{ids}"
             name:
               blank: Nome não pode estar em branco.
             email:
               invalid: Formato do email incorreto.
               blank: Email não pode estar em branco.
-              blank: Esse email já foi registrado anteoriormente.
+              taken: Esse email já foi registrado anteoriormente.
