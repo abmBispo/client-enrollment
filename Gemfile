@@ -25,6 +25,8 @@ gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'coveralls', require: false, group: :test
 # Code coverage for Ruby 1.9+ with a powerful configuration library and automatic merging of coverage across test suites.
 gem 'simplecov', require: false, group: :test
+# Automatic Ruby code style checking tool. Aims to enforce the community-driven Ruby Style Guide.
+gem 'rubocop', '~> 0.42.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
