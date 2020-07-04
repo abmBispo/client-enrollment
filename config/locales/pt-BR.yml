@@ -27,11 +27,15 @@ pt-BR:
   activerecord:
     errors:
       models:
-        post:
+        tag:
           attributes:
-            title:
-              too_long: Título não pode ter mas de 140 caracteres.
-              blank: Título não pode estar em branco.
-            body:
-              blank: Conteúdo não pode estar em branco.
-              too_long: Conteúdo não pode ter mas de 1000 (mil) caracteres.
+            name:
+              blank: Nome não pode estar em branco.          
+        client:
+          attributes:
+            name:
+              blank: Nome não pode estar em branco.
+            email:
+              invalid: Formato do email incorreto.
+              blank: Email não pode estar em branco.
+              blank: Esse email já foi registrado anteoriormente.

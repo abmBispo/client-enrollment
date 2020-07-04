@@ -11,7 +11,7 @@ class TagTest < ActiveSupport::TestCase
   test 'shouldn`t be created without name' do
     tag = Tag.new(name: '')
     assert_not(tag.save)
-    assert(tag.errors.messages == { name: ["can't be blank"] })
+    assert(tag.errors.messages == { name: [I18n.t('activerecord.errors.models.tag.attributes.name.blank')] })
   end
 
   test 'should be retrieved by name' do
