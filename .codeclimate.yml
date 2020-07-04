@@ -1,6 +1,7 @@
 engines:
   rubocop:
     enabled: true
+    channel: rubocop-0-60 # Minimum version to support ruby 2.6
 ratings:
   paths:
   - "**.rb"
