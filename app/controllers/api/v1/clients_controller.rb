@@ -33,7 +33,7 @@ class Api::V1::ClientsController < ApplicationController
     invalid_ids = params[:enrollment_ids].reject { |id| Enrollment.exists? id }
     return if invalid_ids.empty?
 
-    render json: {
+    render status: 422, json: {
       errors: {
         enrollment_ids: I18n.t('activerecord.errors.models.client.attributes.enrollment_ids.invalid', ids: invalid_ids.join(', '))
       }

@@ -31,4 +31,15 @@ class Api::V1::ClientsControllerTest < ActionDispatch::IntegrationTest
     assert JSON.parse(@response.body)['email'] == client_params[:email]
     assert JSON.parse(@response.body)['tags'].first['name'] == enrollments(:one).tag.name
   end
+
+  test 'Client creation with invalid enrollment_ids' do
+    client_params = {
+      name: Faker::Artist.name,
+      email: Faker::Internet.email,
+      enrollment_ids: [0]
+    }
+    post api_v1_clients_url, params: client_params
+    assert_response :unprocessable_entity
+    assert JSON.parse(@response.body)['errors']['enrollment_ids'] == I18n.t('activerecord.errors.models.client.attributes.enrollment_ids.invalid', ids: 0)
+  end
 end
