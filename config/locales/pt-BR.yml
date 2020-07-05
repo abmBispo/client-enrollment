@@ -27,6 +27,14 @@ pt-BR:
   activerecord:
     errors:
       models:
+        enrollment:
+          attributes:
+            name:
+              taken: Esse nome já foi registrado anteoriormente. Escolha outro e tente de novo.
+            client:
+              required: É necessário um ID válido de cliente para criar o formulário.
+            tag:
+              required: É necessário um ID válido de tag para criar o formulário.
         tag:
           attributes:
             name:
