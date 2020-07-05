@@ -15,19 +15,19 @@ class TagTest < ActiveSupport::TestCase
   end
 
   test 'should be retrieved by name' do
-    tag = Tag.find_by(name: 'First tag')
+    tag = Tag.find_by(name: 'Eletronics')
     assert(tag.is_a?(Tag))
-    assert(tag.name == 'First tag')
+    assert(tag.name == 'Eletronics')
   end
 
   test 'should be updated' do
-    tag = Tag.find_by(name: 'First tag')
-    assert(tag.update(name: 'Updated tag'))
-    assert(tag.name == 'Updated tag')
+    tag = Tag.find_by(name: 'Eletronics')
+    assert(tag.update(name: 'Eletronix'))
+    assert(tag.name == 'Eletronix')
   end
 
   test 'should be destroyed' do
-    tag = Tag.find_by(name: 'First tag')
+    tag = Tag.find_by(name: 'Eletronics')
     assert(tag.destroy)
   end
 end

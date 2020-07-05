@@ -29,7 +29,7 @@ class Api::V1::ClientsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert JSON.parse(@response.body)['name'] == client_params[:name]
     assert JSON.parse(@response.body)['email'] == client_params[:email]
-    assert JSON.parse(@response.body)['tags'].first['name'] == enrollments(:one).tag.name
+    assert JSON.parse(@response.body)['tags'].first == enrollments(:one).tag.name
   end
 
   test 'Client creation with invalid enrollment_ids' do
