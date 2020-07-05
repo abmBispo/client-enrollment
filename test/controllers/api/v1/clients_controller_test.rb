@@ -42,4 +42,18 @@ class Api::V1::ClientsControllerTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
     assert JSON.parse(@response.body)['errors']['enrollment_ids'] == I18n.t('activerecord.errors.models.client.attributes.enrollment_ids.invalid', ids: 0)
   end
+
+  test 'Client should no be created with invalid params' do
+    client_params = {
+      name: Faker::Artist.name
+    }
+    post api_v1_clients_url, params: client_params
+    assert_response :unprocessable_entity
+
+    client_params = {
+      email: Faker::Internet.email
+    }
+    post api_v1_clients_url, params: client_params
+    assert_response :unprocessable_entity
+  end
 end

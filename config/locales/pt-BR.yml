@@ -30,6 +30,7 @@ pt-BR:
         tag:
           attributes:
             name:
+              taken: Esse nome já foi registrado anteoriormente. Escolha outro e tente de novo.
               blank: Nome não pode estar em branco.
         client:
           attributes:
@@ -40,4 +41,4 @@ pt-BR:
             email:
               invalid: Formato do email incorreto.
               blank: Email não pode estar em branco.
-              taken: Esse email já foi registrado anteoriormente.
+              taken: Esse email já foi registrado anteoriormente. Escolha outro e tente de novo.
