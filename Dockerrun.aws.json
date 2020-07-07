@@ -15,7 +15,7 @@
   "containerDefinitions": [{
       "essential": true,
       "name": "postgres",
-      "image": "postgres:9.6",
+      "image": "postgres:11",
       "mountPoints": [{
         "containerPath": "/var/lib/postgresql/data",
         "sourceVolume": "home_docker_volumes_postgres"
