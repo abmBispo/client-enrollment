@@ -29,7 +29,7 @@
         "./lib/docker-entrypoint.sh"
       ],
       "essential": true,
-      "image": "867160744824.dkr.ecr.us-east-1.amazonaws.com/client-enrollment:latest",
+      "image": "867160744824.dkr.ecr.us-east-1.amazonaws.com/client-enrollment",
       "mountPoints": [{
         "containerPath": "/app/log",
         "sourceVolume": "home_docker_volumes_rails"
@@ -47,11 +47,15 @@
     {
       "essential": true,
       "name": "web",
-      "image": "867160744824.dkr.ecr.us-east-1.amazonaws.com/client-enrollment-nginx:latest",
+      "image": "867160744824.dkr.ecr.us-east-1.amazonaws.com/client-enrollment-nginx",
       "portMappings": [{
           "containerPort": 80,
           "hostPort": 80
         },
+        {
+          "containerPort": 443,
+          "hostPort": 443
+        }
       ],
       "links": [
         "rails_app"
