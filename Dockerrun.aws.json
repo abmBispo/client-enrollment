@@ -1,5 +1,17 @@
 {
   "AWSEBDockerrunVersion": 2,
+  "volumes": [{
+    "host": {
+      "sourcePath": "/docker/volumes/rails"
+    },
+    "name": "home_docker_volumes_rails"
+  },
+  {
+    "host": {
+      "sourcePath": "/docker/volumes/postgres"
+    },
+    "name": "home_docker_volumes_postgres"
+  }],
   "containerDefinitions": [{
       "essential": true,
       "name": "postgres",
@@ -12,7 +24,7 @@
         "containerPort": 5432,
         "hostPort": 5432
       }],
-      "memoryReservation": 150
+      "memoryReservation": 250
     },
     {
       "command": [
@@ -62,17 +74,5 @@
       ],
       "memoryReservation": 150
     }
-  ],
-  "volumes": [{
-      "host": {
-        "sourcePath": "/docker/volumes/rails"
-      },
-      "name": "home_docker_volumes_rails"
-    },
-    {
-      "host": {
-        "sourcePath": "/docker/volumes/postgres"
-      },
-      "name": "home_docker_volumes_postgres"
-    }]
+  ]
 }
