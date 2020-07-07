@@ -1,0 +1,78 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [{
+      "essential": true,
+      "name": "postgres",
+      "image": "postgres:9.6",
+      "mountPoints": [{
+        "containerPath": "/var/lib/postgresql/data",
+        "sourceVolume": "home_docker_volumes_postgres"
+      }],
+      "portMappings": [{
+        "containerPort": 5432,
+        "hostPort": 5432
+      }],
+      "memoryReservation": 150
+    },
+    {
+      "command": [
+        "bundle",
+        "exec",
+        "rails",
+        "s",
+        "-p",
+        "3000",
+        "-b",
+        "0.0.0.0"
+      ],
+      "entryPoint": [
+        "./lib/docker-entrypoint.sh"
+      ],
+      "essential": true,
+      "image": "867160744824.dkr.ecr.us-east-1.amazonaws.com/client-enrollment",
+      "mountPoints": [{
+        "containerPath": "/app/log",
+        "sourceVolume": "home_docker_volumes_rails"
+      }],
+      "name": "rails_app",
+      "portMappings": [{
+        "containerPort": 3000,
+        "hostPort": 3000
+      }],
+      "links": [
+        "postgres"
+      ],
+      "memoryReservation": 450
+    },
+    {
+      "essential": true,
+      "name": "web",
+      "image": "867160744824.dkr.ecr.us-east-1.amazonaws.com/client-enrollment-nginx",
+      "portMappings": [{
+          "containerPort": 80,
+          "hostPort": 80
+        },
+        {
+          "containerPort": 443,
+          "hostPort": 443
+        }
+      ],
+      "links": [
+        "rails_app"
+      ],
+      "memoryReservation": 150
+    }
+  ],
+  "volumes": [{
+      "host": {
+        "sourcePath": "/docker/volumes/rails"
+      },
+      "name": "home_docker_volumes_rails"
+    },
+    {
+      "host": {
+        "sourcePath": "/docker/volumes/postgres"
+      },
+      "name": "home_docker_volumes_postgres"
+    }]
+}
