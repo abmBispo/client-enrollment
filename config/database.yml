@@ -12,9 +12,10 @@ test:
   <<: *default
   database: client_enrollment_test
   username: postgres
-  password:
+  password: postgres
 production:
   <<: *default
   database: client_enrollment_production
-  username: client_enrollment
-  password: <%= ENV['CLIENT_ENROLLMENT_DATABASE_PASSWORD'] %>
+  host: postgres
+  username: postgres
+  password: postgres
