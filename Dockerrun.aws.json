@@ -35,7 +35,9 @@
         "-p",
         "3000",
         "-b",
-        "0.0.0.0"
+        "0.0.0.0",
+        "-e",
+        "production"
       ],
       "entryPoint": [
         "./lib/docker-entrypoint.sh"
