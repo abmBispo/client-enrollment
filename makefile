@@ -9,7 +9,7 @@ all: build tag push deploy
 # login: aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin $(AWS_ENDPOINT)
 
 build:
-	RACK_ENV=$(RAILS_ENV) sudo docker build -t $(APP) -f docker/app/Dockerfile .
+	RAILS_ENV=$(RAILS_ENV) sudo docker build -t $(APP) -f docker/app/Dockerfile .
 	sudo docker build -t $(PROXY_SERVER) -f docker/web/Dockerfile .
 
 tag:
