@@ -48,5 +48,5 @@ bundle exec rails server
 
 ## Relevant links
 
-[API documentation](https://documenter.getpostman.com/view/479599/T17KcmCm?version=latest#937f54bb-98e8-42c4-8003-8163295b9514)
+* [API documentation](https://documenter.getpostman.com/view/479599/T17KcmCm?version=latest#937f54bb-98e8-42c4-8003-8163295b9514)
 * [Don't install Postgres. Docker pull Postgres](https://hackernoon.com/dont-install-postgres-docker-pull-postgres-bee20e200198)
